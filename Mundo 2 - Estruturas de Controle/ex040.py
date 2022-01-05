@@ -7,18 +7,13 @@ mostrando uma mensagem no final, de acordo com a média atingida:
 - Média 7.0 ou superior: APROVADO
 """
 
-from datetime import date
-nasc = int(input('Ano de nascimento: '))
-atual = date.today().year
-idade = atual - nasc
-print('Quem nasceu em {} tem {} anos em {}.'.format(nasc, idade, atual))
-if idade > 18:
-    print('Você já deveria ter se alistado há {} anos.'.format(idade - 18))
-    print('Seu alistamento foi em {}.'.format(nasc + 18))
-elif idade == 18:
-    print('Você tem que se alistar IMEDIATAMENTE!')
-elif idade < 18:
-    print('Ainda faltam {} anos para o alistamento.'.format(18 - idade))
-    print('Seu alistamento será em {}.'.format(nasc + 18))
-  
-  
+n1 = float(input('Primeira nota: '))
+n2 = float(input('Segunda nota: '))
+media = (n1 + n2) / 2
+print('Tirando {:.1f} e {:.1f}, a média do aluno é: {:.1f}'.format(n1, n2, media))
+if media < 5:
+    print('Aluno REPROVADO!')
+elif 7 > media >= 5:
+    print('Aluno em RECUPERAÇÃO!')
+elif media >= 7:
+    print('Aluno APROVADO!')
